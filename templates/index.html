@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Sederhana</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Kalkulator Sederhana</h1>
+  <div class="calculator">
+    <h1>Simple Calculator</h1>
     <form method="POST" action="/calculate">
-        <input type="number" name="num1" placeholder="Angka pertama" required>
-        <input type="number" name="num2" placeholder="Angka kedua" required>
-        <select name="operation">
-            <option value="add">Tambah</option>
-            <option value="subtract">Kurang</option>
-            <option value="multiply">Kali</option>
-            <option value="divide">Bagi</option>
-        </select>
-        <button type="submit">Hitung</button>
+      <input type="number" name="num1" placeholder="Enter first number" required>
+      <input type="number" name="num2" placeholder="Enter second number" required>
+      <select name="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <button type="submit">Calculate</button>
     </form>
-
     {% if result is not none %}
-        <h2>Hasil: {{ result }}</h2>
+      <h2>Result: {{ result }}</h2>
     {% endif %}
+  </div>
 </body>
 </html>
