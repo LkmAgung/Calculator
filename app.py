@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+# Setup logging
+logging.basicConfig(level=logging.DEBUG)
+
 @app.route('/')
 def home():
     return render_template('index.html')
